@@ -1,0 +1,37 @@
+mediaFlick が自動ダウンロード/同梱して別プロセスで利用する第三者ソフトウェアの
+ライセンスと対応ソース入手先の一覧。
+
+mediaFlick 本体はこれらを「コマンドラインの別プロセス」として呼び出すだけであり、
+本体コードはこれらの派生物ではありません(独立プログラムの集合)。
+
+================================================================
+dvdauthor 0.7.1  (DVD-Video オーサリング)
+  ライセンス: GNU General Public License v2 (or later)  → COPYING.GPLv2.txt
+  本バンドル(dvdauthor-win64.zip)の内容:
+    - dvdauthor.exe (Windows x64, MinGW ビルド)
+    - 由来: DVDStyler 3.0.4 (win64) 同梱バイナリを抽出
+    - SHA-256(zip): e10463d8a25650f9da881b44539ebb15a85d5241b9722b99cb0b39ea9520af0c
+  対応ソース: dvdauthor-0.7.1.tar.gz を本リポジトリの Release に同梱
+    - SHA-256(src): 501fb11b09c6eb9c5a229dcb400bd81e408cc78d34eab6749970685023c51fe9
+    - 上流: https://sourceforge.net/projects/dvdauthor/  および  https://github.com/ldo/dvdauthor
+    - ビルドスクリプト/パッチ: DVDStyler 3.0.4 のソース
+      (https://sourceforge.net/projects/dvdstyler/files/dvdstyler/3.0.4/) を参照
+
+同梱 DLL (dvdauthor.exe の動的依存):
+  libxml2-2.dll   — libxml2 :  MIT License            (https://gitlab.gnome.org/GNOME/libxml2)
+  libiconv-2.dll  — GNU libiconv : LGPL v2.1 (or later) → COPYING.LGPLv2.1.txt
+                    (https://www.gnu.org/software/libiconv/)
+  liblzma-5.dll   — xz/liblzma : public domain (0BSD)  (https://tukaani.org/xz/)
+  zlib1.dll       — zlib : zlib License                (https://zlib.net/)
+
+================================================================
+FFmpeg  (エンコード/デコード/解析)
+  ライセンス: GNU General Public License v2 (or later)  ※ x264/x265 を含む GPL フルビルド
+  バイナリ取得元: BtbN/FFmpeg-Builds の win64-gpl 最新ビルド
+    (https://github.com/BtbN/FFmpeg-Builds)
+  対応ソース: 上記 BtbN リポジトリ および https://ffmpeg.org/download.html
+  ※ 配布物には ffmpeg 同梱の LICENSE.txt / COPYING を保持すること。
+
+================================================================
+注記: 将来 mediaFlick を有償配布する場合、FFmpeg は GPL 部品(x264/x265)を
+除いた LGPL ビルドへの差し替えを検討すること(dvdauthor は GPL 専用)。
